@@ -14,6 +14,8 @@ g++ -std=c++17 -O2 -o brainrot brainrot.cpp
 
 ## Usage
 
+**This program runs best in powershell or bash**
+
 ```bash
 brainrot                        # open editor (empty buffer)
 brainrot edit <file.aura>       # open editor with existing file
@@ -115,7 +117,6 @@ yap(x)   # could be anything. literally.
 ```
 
 ---
-
 ## License
 
 Do whatever. No cap.
