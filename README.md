@@ -6,6 +6,8 @@ A dynamically-typed scripting language with Python-like semantics, written in C+
 
 ## Installation
 
+**You can download the v 0.5 release if you do not want to have to compile the program yourself**
+
 ```bash
 g++ -std=c++17 -O2 -o brainrot brainrot.cpp
 ```
