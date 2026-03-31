@@ -1,4 +1,4 @@
-# BrainRot Interpreter v3.1
+# BrainRot Interpreter v0.5 *Beta*
 
 A dynamically-typed scripting language with Python-like semantics, written in C++17. Saves/loads `.aura` files. Includes a built-in terminal editor — no ncurses, raw ANSI/termios, works on Windows too.
 
