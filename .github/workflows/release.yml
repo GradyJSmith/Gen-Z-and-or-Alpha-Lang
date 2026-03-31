@@ -1,0 +1,35 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile universal binary
+        run: |
+          g++ -std=c++17 -O2 -target arm64-apple-macos11 -o brainrot_arm64 brainrot.cpp
+          g++ -std=c++17 -O2 -target x86_64-apple-macos10.15 -o brainrot_x86 brainrot.cpp
+          lipo -create -output brainrot brainrot_arm64 brainrot_x86
+          tar -czf BrainRot-macos.tar.gz brainrot README.md
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: BrainRot-macos.tar.gz
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile static binary
+        run: |
+          g++ -std=c++17 -O2 -static -o brainrot brainrot.cpp
+          tar -czf BrainRot-linux.tar.gz brainrot README.md
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: BrainRot-linux.tar.gz
