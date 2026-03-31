@@ -1,0 +1,4 @@
+g++ -std=c++17 -O2 -o brainrot brainrot.cpp
+./brainrot                    # open editor
+./brainrot edit mycode.aura   # edit file
+./brainrot run  mycode.aura   # run file
