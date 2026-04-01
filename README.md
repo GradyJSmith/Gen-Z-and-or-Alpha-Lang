@@ -121,4 +121,6 @@ yap(x)   # could be anything. literally.
 ---
 ## License
 
-Do whatever. No cap.
+Do whatever. No cap. 
+
+***Seriously though, this project is MIT licensed.***
